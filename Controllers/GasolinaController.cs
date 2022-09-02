@@ -3,6 +3,10 @@ using Microsoft.AspNetCore.Mvc;
 using Dapper;
 using System.Data;
 using System.Data.SqlClient;
+using apiSobreTasaGasolina.Entities;
+
+
+ 
 
 namespace apiSobreTasaGasolina.Controllers
 {
@@ -64,6 +68,21 @@ namespace apiSobreTasaGasolina.Controllers
             }
         }
 
+        [HttpGet ("ciudades")]
+        public ActionResult GetCiudades()
+        {
+            try
+            {
+                List<Ciudad> ciudades = db.Query<Ciudad>("select * from tbl_Ciudad").ToList();
+                return Ok(ciudades);
+            }
+            catch (Exception ex)
+            {
+
+                return Problem(ex.Message);
+            }
+        }
+
         [HttpPost("GuardarContribuyente")]
         public ActionResult GuardarContribuyente(Contribuyente contribuyente)
         {
@@ -89,38 +108,62 @@ namespace apiSobreTasaGasolina.Controllers
             }
         }
 
-            [HttpPost ("GuardarFormulario")]
-            public ActionResult GuardarFormulario(SobreTasaGasolina formulario)
+        [HttpPost ("GuardarFormulario")]
+        public ActionResult GuardarFormulario(Formulario formulario)
+        {
+            try
+            {
+                List<Contribuyente> contribuyentes = db.Query<Contribuyente>($"select * from tbl_Contribuyente where documento={formulario.Contribuyente.documento}").ToList();
+                if (contribuyentes.Count == 0)
+                {
+                    db.Query("insert into tbl_Contribuyente (documento,nombre,direccion,municipio,telefono,celular,tipoContribuyente,tipoDocumento)" +
+                        $"values ({formulario.Contribuyente.documento},'{formulario.Contribuyente.nombre}','{formulario.Contribuyente.direccion}',{formulario.Contribuyente.municipio}," +
+                        $"'{formulario.Contribuyente.telefono}','{formulario.Contribuyente.celular}',{formulario.Contribuyente.tipoContribuyente},{formulario.Contribuyente.tipoDocumento})");
+                }
+                        
+            }
+            catch (Exception ex)
+            {
+
+            return BadRequest(ex.Message);
+
+            }
+
+            try
+            {
+                var resultado = db.Query("guardarFormulario ",formulario.DetalleDeclaracion,commandType:CommandType.StoredProcedure).FirstOrDefault();
+
+                return Ok(resultado);
+            }
+            catch (Exception ex)
+            {
+
+                return BadRequest(ex.Message);
+            }
+
+                
+            }
+            [HttpPost("Preview")]
+            public ActionResult PreviewPdf(Formulario formulario)
             {
                 try
                 {
-                    db.Query($"insert into tbl_SobreTasaGasolina (galonesGasoCorriente,galonesGasoCorriOxigenada,galonesGasoExtra,galonesGasoExtraOxi,"
-                        + $"galonesGasoImportada,galonesGasoZFBasica,galonesGasoZFOxi,baseGasoCorriente,baseGasoCorriOxigenada,baseGasoExtra,baseGasoExtraOxi'"
-                        + $"baseGasoImportada,baseGasoZFBasica,baseGasoZFOxi,gasoCorrienteCarbu,gasoCorriOxigenadaCarbu,gasoExtraCarbu,gasoExtraOxiCarbu,"
-                        + $"gasoImportadaCarbu,gasoZFBasicaCarbu,gasoZFOxiCarbu,tarifaGasoCorriente,tarifaGasoCorriOxigenada,tarifaGasoExtra,tarifaGasoExtraOxi,"
-                        + $"tarifaGasoImportada,tarifaGasoZFBasica,tarifaGasoZFOxi,sobretasaGasoCorriente,sobretasaGasoCorriOxigenada,sobretasaGasoExtra,"
-                        + $"sobretasaGasoExtraOxi,sobretasaGasoImportada,sobretasaGasoZFBasica,sobretasaGasoZFOxi,totalSobreTasa,totalSaldoCargo,sanciones,"
-                        + $"mesDeclarar,ano,compensacion VALUES ('{formulario.galonesGasoCorriente}','{formulario.galonesGasoCorriOxigenada}',"
-                        + $"'{formulario.galonesGasoExtra}','{formulario.galonesGasoExtraOxi}','{formulario.galonesGasoImportada}','{formulario.galonesGasoZFBasica}',"
-                        + $"'{formulario.galonesGasoZFOxi}','{formulario.baseGasoCorriente}','{formulario.baseGasoCorriOxigenada}','{formulario.baseGasoExtra}',"
-                        + $"'{formulario.baseGasoExtraOxi}','{formulario.baseGasoImportada}','{formulario.baseGasoZFBasica}','{formulario.baseGasoZFOxi}',"
-                        + $"'{formulario.gasoCorrienteCarbu}','{formulario.gasoCorriOxigenadaCarbu}','{formulario.gasoExtraCarbu}','{formulario.gasoExtraOxiCarbu}',"
-                        + $"'{formulario.gasoImportadaCarbu}','{formulario.gasoZFBasicaCarbu}','{formulario.gasoZFOxiCarbu}','{formulario.tarifaGasoCorriente}',"
-                        + $"'{formulario.tarifaGasoCorriOxigenada}','{formulario.tarifaGasoExtra}','{formulario.tarifaGasoExtraOxi}','{formulario.tarifaGasoImportada}',"
-                        + $"'{formulario.tarifaGasoZFBasica}','{formulario.tarifaGasoZFOxi}','{formulario.sobretasaGasoCorriente}','{formulario.sobretasaGasoCorriOxigenada}',"
-                        + $"'{formulario.sobretasaGasoExtra}','{formulario.sobretasaGasoExtraOxi}','{formulario.sobretasaGasoImportada}',"
-                        + $"'{formulario.sobretasaGasoZFBasica}','{formulario.sobretasaGasoZFOxi}','{formulario.totalSobreTasa}','{formulario.totalSaldoCargo}',"
-                        + $"'{formulario.sanciones}','{formulario.mesDeclarar}','{formulario.ano}','{formulario.compensacion}',)");
+                    PDF pdf = new PDF();
+                    string body = pdf.llenarPDF(formulario);
 
-                    return Ok("se guardo el formulario");
+                HtmlToImage converter = new HtmlToImage();
+                //converter.WebPageWidth = 600;
+                //Image img = converter.ConvertHtmlString(body, "");
+                //    byte[] imgBytes = (byte[])(new ImageConverter()).ConvertTo(body, typeof(byte[]));
+                //string[] partes = body.Split("td");
+                    return Ok();
                 }
                 catch (Exception ex)
                 {
 
-                    return BadRequest(ex.Message);
+                    return Problem(ex.Message);
                 }
-
-                
+               
             }
         
     }

@@ -54,6 +54,10 @@
               "target": "Package",
               "version": "[5.2.9, )"
             },
+            "Select.HtmlToPdf": {
+              "target": "Package",
+              "version": "[21.2.0, )"
+            },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
               "version": "[6.2.3, )"
@@ -61,6 +65,10 @@
             "System.Data.SqlClient": {
               "target": "Package",
               "version": "[4.8.3, )"
+            },
+            "System.Drawing.Common": {
+              "target": "Package",
+              "version": "[6.0.0, )"
             }
           },
           "imports": [
