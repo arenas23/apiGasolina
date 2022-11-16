@@ -7,6 +7,7 @@
         public Contribuyente Contribuyente { get; set; }
         public long valorPagar { get; set; }
         public SobreTasaGasolina DetalleDeclaracion { get; set; }
+        public DataReplaceX DatosReemplazar { get; set; }
 
     }
 }

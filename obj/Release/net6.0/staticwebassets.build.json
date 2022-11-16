@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "YrAFJuzsZIR93H/yODBJhZo8VcNNa7Abir8Te29hBLY=",
+  "Source": "apiSobreTasaGasolina",
+  "BasePath": "_content/apiSobreTasaGasolina",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

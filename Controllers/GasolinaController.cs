@@ -4,9 +4,8 @@ using Dapper;
 using System.Data;
 using System.Data.SqlClient;
 using apiSobreTasaGasolina.Entities;
-
-
- 
+using SelectPdf;
+using System.Drawing;
 
 namespace apiSobreTasaGasolina.Controllers
 {
@@ -73,7 +72,7 @@ namespace apiSobreTasaGasolina.Controllers
         {
             try
             {
-                List<Ciudad> ciudades = db.Query<Ciudad>("select * from tbl_Ciudad").ToList();
+                List<Ciudad> ciudades = db.Query<Ciudad>("select c.idCiudad, c.nombreCiudad,c.idDepartamento, d.nombreDepartamento from tbl_Ciudad c inner join tbl_Departamento d on c.idDepartamento = d.idDepartamento").ToList();
                 return Ok(ciudades);
             }
             catch (Exception ex)
@@ -142,29 +141,66 @@ namespace apiSobreTasaGasolina.Controllers
             }
 
                 
-            }
-            [HttpPost("Preview")]
-            public ActionResult PreviewPdf(Formulario formulario)
+        }
+        
+        [HttpPost("Preview")]
+        public ActionResult PreviewPdf(ConsultaPreview consulta)
+        {
+            try
             {
-                try
-                {
-                    PDF pdf = new PDF();
-                    string body = pdf.llenarPDF(formulario);
-
-                HtmlToImage converter = new HtmlToImage();
-                //converter.WebPageWidth = 600;
-                //Image img = converter.ConvertHtmlString(body, "");
-                //    byte[] imgBytes = (byte[])(new ImageConverter()).ConvertTo(body, typeof(byte[]));
-                //string[] partes = body.Split("td");
-                    return Ok();
-                }
-                catch (Exception ex)
-                {
-
-                    return Problem(ex.Message);
-                }
-               
+                Formulario formulario = new Formulario();
+                formulario.Contribuyente = db.Query<Contribuyente>($"select * from tbl_Contribuyente where documento={consulta.contribuyente}").FirstOrDefault();
+                formulario.DetalleDeclaracion = db.Query<SobreTasaGasolina>($"select * from tbl_SobreTasaGasolina where idGasolina = {consulta.IdDeclaracion}").FirstOrDefault();
+                formulario.DatosReemplazar = consulta.datos;
+                PDF pdf = new PDF();
+                string body = pdf.llenarPDF(formulario);
+                var converter = new HtmlToImage();
+                converter.WebPageWidth = 600;
+                Image img = converter.ConvertHtmlString(body, "");
+                byte[] imgBytes = (byte[])(new ImageConverter()).ConvertTo(img, typeof(byte[]));
+                 //string[] partes = body.Split("td");
+                return Ok(imgBytes);
             }
+            catch (Exception ex)
+            {
+
+                return Problem(ex.Message);
+            }
+               
+        }
+
+        [HttpPost("Declarar")]
+        public ActionResult Declarar(ConsultaPDF consulta)
+        {
+            try
+            {
+                Formulario formulario = new Formulario();
+                formulario.Contribuyente = db.Query<Contribuyente>($"select * from tbl_Contribuyente where documento={consulta.Contribuyente}").FirstOrDefault();
+                formulario.DetalleDeclaracion = db.Query<SobreTasaGasolina>($"select * from tbl_SobreTasaGasolina where idGasolina = {consulta.IdDeclaracion}").FirstOrDefault();
+                formulario.DatosReemplazar = consulta.DatosReemplazar;
+                PDF pdf = new PDF();
+                string body = pdf.llenarPDF(formulario);
+                byte[] pdfBytes=pdf.crearPDF(body);
+
+                Declaracion declaracion = new();
+                declaracion.idDeclaracion = consulta.IdDeclaracion;
+                declaracion.contribuyente = consulta.Contribuyente;
+                declaracion.fecha = consulta.fecha;
+                declaracion.PDF = pdfBytes;
+                declaracion.valorPagar = formulario.DetalleDeclaracion.totalPagarCargo;
+                declaracion.tipo = consulta.Tipo;
+                declaracion.idMunicipio = consulta.municipio;
+
+
+                db.Query("Declarar", declaracion, commandType: CommandType.StoredProcedure).FirstOrDefault();
+
+                return Ok(pdfBytes);
+            }
+            catch (Exception ex)
+            {
+                return Problem(ex.Message);
+            }
+        }
         
     }
 }
