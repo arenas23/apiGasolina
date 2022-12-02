@@ -2,6 +2,8 @@
 {
     public class SobreTasaGasolina
     {
+        public string documentoContadorRevisor { get; set; }
+        public string FechaMaximun { get; set; }
         public float galonesGasoCorriente { get; set; }
         public float galonesGasoCorriOxigenada { get; set; }
         public float galonesGasoExtra { get; set; }
@@ -54,5 +56,6 @@
         public string fechaCorreccion { get; set; }
         public long radicadoCorreccion { get; set; }
         public int interesMora { get; set; }
+
     }
 }

@@ -4,7 +4,10 @@
     <DebuggerFlavor>ProjectDebugger</DebuggerFlavor>
   </PropertyGroup>
   <PropertyGroup>
-    <ActiveDebugProfile>IIS Express</ActiveDebugProfile>
-    <NameOfLastUsedPublishProfile>C:\Users\carlos.velez\source\repos\apiSobreTasaGasolina\Properties\PublishProfiles\FolderProfile.pubxml</NameOfLastUsedPublishProfile>
+    <ActiveDebugProfile>apiSobreTasaGasolina</ActiveDebugProfile>
+    <NameOfLastUsedPublishProfile>C:\Users\MARISTIZABAL\Documents\apiGasolina\Properties\PublishProfiles\FolderProfile.pubxml</NameOfLastUsedPublishProfile>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <DebuggerFlavor>ProjectDebugger</DebuggerFlavor>
   </PropertyGroup>
 </Project>

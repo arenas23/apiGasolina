@@ -55,36 +55,97 @@ namespace apiSobreTasaGasolina.Entities
 
                 <div class=""pagina"">
                     <div class=""lados"">
-                        <div style=""width: 40%;"">
-                            <p>DECLARACION DE LA SOBRETASA</p>
-                            <P>MUNICIPAL Y DISTRITAL A LA</P>
-                            <P>GASOLINA MOTOR</P>
-                            <P>FORMULARIO MHCP-DAF-024-2021-GAS</P>
-                        </div>
-                        <div style=""width: 60%;"">
-                            <table class=""tamano"" style=""border-collapse: collapse;"">
-                                <tr>
-                                    <td style=""padding: 13px;"" colspan=""7"" class=""bordes""><span><strong>SECCION A: INFORMACION ENTIDAD TERRITORIAL</strong></span></td>
-                                </tr>
-                                <tr>
-                                    <td style=""padding: 6px;""><span>MUNICIPIO O DISTRITO</span></td>
-                                    <td colspan=""5""><span>CODIGO DANE</span></td>
-                                </tr>
-                                <tr>
-                                    <td style=""padding: 6px;"" class=""bordes""><span>YONDO (ANTIOQUIA)</span></td>
-                                    <td class=""bordes""><span>0</span></td>
-                                    <td class=""bordes""><span>5</span></td>
-                                    <td class=""bordes""><span>8</span></td>
-                                    <td class=""bordes""><span>9</span></td>
-                                    <td class=""bordes""><span>3</span></td>
-                                </tr>
-                                <tr>
-                                    <td style=""padding: 6px;"" colspan=""4"" class=""bordes""><span>NIT</span></td>
-                                    <td class=""bordes""><span>D.V</span></td>
-                                    <td class=""bordes"">6</td>
-                                </tr>
+                        <table width=""100%"" border=""0"" align=""center"" cellpadding=""0"" cellspacing=""0"" 
+                            style=""border-collapse: collapse;border-color: rgba(0,0,0,0.3);font-size: 30px;font-family: Arial, Verdana, sans-serif; margin-top: 100px;"">
+                            <tbody>
+                              <tr>
+                                <td align=""left"" style=""padding: 5px 10px;border: 0px solid #000000;"">
+                                  <img style=""width:150px; height:110px;""
+                                    src='file:///C:/inetpub/wwwroot/Autoliquidable/HtmlToPdf/8909842656/images/logo1.png' />
+                                  <!-- style=""width:128px;height:128px; -->
+                                </td>
+                                <td align=""center"" style=""padding: 5px 10px;border: 0px solid #000000;"">
+                                  <span><b>MUNICIPIO DE YONDO ANTIOQUIA</b></span>
+                                  <br>
+                                  <span style=""font-size: 26px;""><b>NIT. 890.984.265-6</b></span>
+                                  <br>
+                                  <span style=""font-size: 26px;""><b>SECRETARIA HACIENDA MUNICIPAL</b></span>
+                                  <br>
+                                  <!-- <span style=""font-size: 25px;""><b>DECLARACION Y LIQUIDACION PRIVADA ANUAL</b></span>
+                                      <br> -->
+                                  <span style=""font-size: 24px;"">FORMULARIO MUNICIPAL DECLARACION DE LA SOBRETASA A LA GASOLINA MOTOR </span>
+                                </td>
+                                <td colspan=""3"" align=""right"" style=""padding: 5px 10px;border: 0px solid #000000;"">
+                                  <img style=""width:180px; height:100px;""
+                                    src='file:///C:/inetpub/wwwroot/Autoliquidable/HtmlToPdf/8909842656/images/logo2.png' />
+                                </td>
+                              </tr>
+                            </tbody>
+                          </table>
+
+
+
+                         <table width=""100%"" border=""0"" align=""center"" cellpadding=""0"" cellspacing=""0""
+                                style=""border-collapse: collapse;border-color: rgba(0,0,0,0.3);font-size: 30px;font-family: Arial, Verdana, sans-serif;"">
+                                <tbody>
+                                  <td colspan=""5"" align=""center""
+                                    style=""background: #CDCDCD;padding: 5px 10px;border: 1px solid #000000;font-size: 20px;font-weight: 600;"">
+                                    <span id=""MensajeAcuerdoMunicipal""></span>
+                                  </td>
+                                  <tr>
+                                    <td width=""16%"" align=""left"" style=""padding: 5px 10px;border: 1px solid #000000; font-size: 22px"">
+                                      <strong>MUNICIPIO
+                                    <td colspan=""3"" align=""left"" style=""padding: 5px 10px;border: 1px solid #000000;  font-size: 22px"">YONDO
+                                    </td>
+                                    <td width=""25%"" rowspan=""2"" align=""left"" style=""border: 1px solid #000000;"">
+                                      <table width=""100%"" border=""0"" cellspacing=""0"" cellpadding=""0"" style=""padding: 5px 10px;"">
+                                        <tbody>
+                                          <tr>
+                                            <td align=""center"" style=""font-size: 22px""><strong>Fecha máxima presentación</strong></td>
+                                          </tr>
+                                          <tr>
+                                            <td align=""center""></td>
+                                          </tr>
+                                          <tr>
+                                            <td align=""center"" height=""30px"" style=""font-size: 20px"">{formulario.DetalleDeclaracion.FechaMaximun}</td>
+                                          </tr>
+                                        </tbody>
+                                      </table>
+                                    </td>
+                                  </tr>
+                                  <tr>
+                                    <td width=""16%"" align=""left"" style=""padding: 5px 10px;border: 1px solid #000000; font-size: 22px"">
+                                      <strong>DEPARTAMENTO:</strong>
+                                    </td>
+                                    <td colspan=""3"" align=""left"" style=""padding: 5px 10px;border: 1px solid #000000; font-size: 20px"">
+                                      ANTIOQUIA</td>
+                                  </tr>
+                                  <tr>
+                                    <td align=""left"" style=""padding: 5px 10px;border: 1px solid #000000; font-size: 22px"">
+                                      <strong>AÑO GRAVABLE:</strong>
+                                    </td>
+                                    <td width=""100%"" align=""left"" style=""padding: 5px 10px; border-right: 0px solid #000000;font-size: 20px"">
+                                      {formulario.DetalleDeclaracion.ano}</td>
+                                    <td colspan=""2"" align=""left"" style=""padding: 5px 10px;border: 0px solid #000000;"">
+                                      <table width=""100%"" border=""0"" cellspacing=""0"" cellpadding=""0"">
+                                        <tbody>
+
+                                        </tbody>
+                                      </table>
+                                    </td>
+                                    <td colspan=""2"" align=""left"" style=""padding: 5px 10px;border-right: 1px solid #000000;"">
+                                      <table width=""100%"" border=""0"" cellspacing=""0"" cellpadding=""0"">
+                                        <tbody>
+
+                                        </tbody>
+                                      </table>
+                                    </td>
+                                  </tr>
+                                </body>
                             </table>
-                        </div>
+
+
+
 
                         <div style=""width: 40%; margin-top: 40px;"" >
                             <table>
@@ -237,9 +298,9 @@ namespace apiSobreTasaGasolina.Entities
                                         </tr>
                                         <tr>
                                             <td style=""width: 20px;""></td>
-                                            <td><span>ANO</span></td>
+                                            <td><span></span></td>
                                             <td style=""width: 20px;""></td>
-                                            <td colspan=""4"" class=""bordes""><span>{formulario.DetalleDeclaracion.ano}</span></td>
+                                            <td colspan=""4""><span></span></td>
                                 
                                             <td style=""width: 20px;""></td>
                                             <td ><span>MES</span></td>
@@ -445,175 +506,178 @@ namespace apiSobreTasaGasolina.Entities
                                 <td colspan=""5"" class=""bordes""><span>TOTAL A CARGO</span></td>
                                 <td class=""bordes""><span>${formulario.DetalleDeclaracion.totalSaldoCargo.ToString("0,0")}</span></td>
                             </tr>
+                            <tr>
+                                <td></td>
+                                    <td colspan=""5""><span><strong>SECCION H: PAGOS</strong></span></td>
+                            </tr>
+                            <tr>
+                                <td class=""bordes""><span>11.</span></td>
+                                    <td colspan=""5"" class=""bordes""><span>VR.SOBRETASA</span></td>
+               
+                                    <td  class=""bordes""><span>{formulario.DetalleDeclaracion.totalSobreTasa.ToString("0,0")}</span></td>
+                            </tr>
+                            <tr>
+                                <td class=""bordes""><span>12.</span></td>
+                                <td colspan=""5"" class=""bordes""><span>VR.SANCIONES</span></td>
+            
+                                <td class=""bordes""><span>{formulario.DetalleDeclaracion.sanciones.ToString("0,0")}</span></td>
+                            </tr>
+                            <tr>
+                                <td class=""bordes""><span>13.</span></td>
+                                    <td colspan=""5"" class=""bordes""><span>VR.INTERESES DE MORA</span></td>
+                
+                                    <td class=""bordes""><span>{formulario.DetalleDeclaracion.interesMora}</span></td>
+                            </tr>
+                            <tr>
+                                <td class=""bordes""><span>14.</span></td>
+                                <td colspan=""5"" class=""bordes""><span>MENOS:COMPENSACIONES</span></td>
+           
+                                <td class=""bordes""><span>{formulario.DetalleDeclaracion.compensacion.ToString("0,0")}</span></td>
+                            </tr>
+                            <tr>
+                                <td class=""bordes""><span>15.</span></td>
+                                <td colspan=""5"" class=""bordes""><span>VR.TOTAL A PAGAR</span></td>
+            
+                                <td class=""bordes""><span>{formulario.DetalleDeclaracion.totalPagarCargo.ToString("0,0")}</span></td>
+                            </tr>
                         </table>
                     </div>
 
                     <div class=""lados"" style=""margin-top: 40px;"">
 
-                        <div class=""tamano"">
-                            <table class=""tamano"" style=""border-collapse: collapse;"">
-                                <tr>
-                                    <td colspan=""10"" style=""border-bottom: 1px solid;""><span><strong>SECCION G: FIRMAS</strong></span></td>
-                                    <td></td>
-                                    <td colspan=""5""><span><strong>SECCION H: PAGOS</strong></span></td>
-                                </tr>
-                                <tr>
-                                    <td style=""border-left: 1px solid;""><span><strong>G1.DECLARANTE</strong></span></td>
-                                    <td ></td>
-                                    <td style=""border-right: 1px solid;"" colspan=""8""><span>declaro que la informacion aqui</span></td>
-                                    <td></td>
-                                    <td class=""bordes"" style=""width: 30px;""><span>11.</span></td>
-                                    <td colspan=""3"" class=""bordes""><span>VR.SOBRETASA</span></td>
-                       
-                                    <td  class=""bordes""><span>{formulario.DetalleDeclaracion.totalSobreTasa.ToString("0,0")}</span></td>
-                                </tr>
-                                <tr>
-                                    <td colspan=""10"" style=""border-left: 1px solid;border-right: 1px solid;""><span>consignada es correcta y ajustada a las disposiciones legales</span></td>
-                                    <td></td>
-                                    <td class=""bordes""><span>12.</span></td>
-                                    <td colspan=""3"" class=""bordes""><span>VR.SANCIONES</span></td>
-                        
-                                    <td class=""bordes""><span>{formulario.DetalleDeclaracion.sanciones.ToString("0,0")}</span></td>
-                                </tr>
-                                <tr>
-                                    <td style=""border-left: 1px solid;""><span>FIRMA</span></td>
-                                    <td ></td>
-                                    <td style=""border-right: 1px solid;"" colspan=""8"" ><span>________________________________________________________</span></td>
-                                    <td></td>
-                                    <td class=""bordes""><span>13.</span></td>
-                                    <td colspan=""3"" class=""bordes""><span>VR.INTERESES DE MORA</span></td>
-                        
-                                    <td class=""bordes""><span>{formulario.DetalleDeclaracion.interesMora}</span></td>
-                                </tr>
-                                <tr>
-                                    <td style=""border-left: 1px solid;""><span>NOMBRES Y APELLIDOS</span></td>
-                                    <td></td>
-                                    <td style=""border-right: 1px solid;"" colspan=""8""><span>{formulario.DetalleDeclaracion.nombreDeclarante}</span></td>
-                                    <td></td>
-                                    <td class=""bordes""><span>14.</span></td>
-                                    <td colspan=""3"" class=""bordes""><span>MENOS:COMPENSACIONES</span></td>
-                       
-                                    <td class=""bordes""><span>{formulario.DetalleDeclaracion.compensacion.ToString("0,0")}</span></td>
-                                </tr>
-                                <tr>
-                                    <td style=""border-left: 1px solid; border-bottom: 1px solid;""><span>C.C</span></td>
-                                    <td style=""border-bottom: 1px solid;""></td>
-                                    <td style=""border-bottom: 1px solid; border-right: 1px solid;"" colspan=""8""><span>{formulario.DetalleDeclaracion.documentoDeclarante}</span></td>
-                                    <td></td>
-                                    <td class=""bordes""><span>15.</span></td>
-                                    <td colspan=""3"" class=""bordes""><span>VR.TOTAL A PAGAR</span></td>
-                        
-                                    <td class=""bordes""><span>{formulario.DetalleDeclaracion.totalPagarCargo.ToString("0,0")}</span></td>
-                                </tr>
-                                <tr>
-                                    <td style=""border-left: 1px solid;""><span></span></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td style=""border-right: 1px solid;""></td>
-                                    <td style=""border-right: 1px solid;""></td>
-                                    <td style=""border-left: 1px solid;"" colspan=""2""><span><strong>FORMA DE PAGO:</strong></span></td>
-                                    <td ><span></span></td>
-                                    <td></td>
-                                    <td style=""border-right: 1px solid;""><span></span></td>
-                        
-                                </tr>
-                                <tr>
-                                    <td style=""border-left: 1px solid;""><span><strong>G.2 CONTADOR</strong></span></td>
-                                    <td colspan=""2""></td>
-                                    <td class=""bordes"" style=""width: 30px;""><span>{formulario.DatosReemplazar.contador}</span></td>
-                                    <td style=""width: 30px;""><span></span></td>
-                                    <td><span>REVISOR FISCAL</span></td>
-                                    <td class=""bordes"" style=""width: 30px;""><span>{formulario.DatosReemplazar.revisor}</span></td>
-                                    <td style=""width: 30px;""></td>
-                                    <td style=""border-right: 1px solid;"" colspan=""2""></td>
-                                    <td></td>
-                        
-                                    <td style=""border-left: 1px solid;"" colspan=""2""><span>EFECTIVO</span></td>
-                                    <td colspan=""""><span></span></td>
-                                    <td></td>
-                                    <td style=""border-right: 1px solid;""><span>$_______________________</span></td>
-                        
-                                </tr>
-                                <tr>
-                                    <td style=""border-left: 1px solid; border-right:1px solid"" colspan=""10""><span></span></td>
-                
-                                    <td></td>
-
-                                    <td style=""border-left: 1px solid;"" colspan=""2""><span>CHEQUE No</span></td>
-                                    <td ><span></span></td>
-                                    <td></td>
-                                    <td style=""border-right: 1px solid;""><span>$_______________________</span></td>
-                        
-                                </tr>
-                                <tr>
-                                    <td style=""border-left: 1px solid;""><span>FIRMA</span></td>
-                                    <td style=""width: 30px;""><span></span></td>
-                                    <td style=""border-right: 1px solid;"" colspan=""8""><span>___________________________________________________</span></td>
-                        
-                                    <td>&nbsp;</td>
-                                    <td style=""border-left: 1px solid;"" colspan=""2""><span>CODIGO BANCO</span></td>
-                                    <td class=""bordes"" style=""width: 30px;""><span></span></td>
-                                    <td class=""bordes"" style=""width: 30px;""><span>&nbsp;</span></SPan></td>
-                                    <td style=""border-right: 1px solid;"" colspan=""2""><span>$_______________________</span></td>
-                        
-                                </tr>
-                                <tr>
-                                    <td style=""border-left: 1px solid;""><span>NOMBRES Y APELLIDOS</span></td>
-                                    <td ><span></span></td>
-                                    <td style=""border-right: 1px solid;"" colspan=""8""><span>{formulario.DetalleDeclaracion.nombreContador}</span></td>
-                                    <td></td>
-                                    <td style=""border-left: 1px solid;border-right:1px solid"" colspan=""6""><span></span></td>
-                                </tr>
-                                <tr>
-                                    <td style=""border-left: 1px solid; border-bottom: 1px solid;""><span>C.C</span></td>
-                                    <td style=""border-bottom: 1px solid;""><span></span></td>
-                                    <td style=""border-bottom: 1px solid;""><span></span></td>
-                                    <td style=""border-bottom: 1px solid;""><span>T.P.</span></td>
-                                    <td style=""border-bottom: 1px solid;""><span>{formulario.DetalleDeclaracion.tarjetaProfesional}</span></td>
-                                    <td style=""border-bottom: 1px solid;""><span></span></td>
-                                    <td style=""border-right: 1px solid; border-bottom: 1px solid;"" colspan=""4""><span>173594-T</span></td>
-                                    <td></td>
-                        
-                                    <td colspan=""6"" class=""bordes""><span></span></td>           
-                                </tr>
-                            </table>
-        
-                        </div>
-
-                        <div class=""tamano lados"" style=""margin-top: 40px;"">
-                            <div style=""width: 49%;"">
-                                <table class=""bordes tamano"">
-                                    <tr>
-                                        <td style=""font-size: 40px; padding:40px""><span>TIMBRE Y SELLO DEL BANCO</span></td>
-                                    </tr>
-                                </table>
-    
-                            </div>
-
-                            <div style=""width: 2%;""></div>
-
-                           <div style=""width: 49%;"">
-                            <table class=""bordes tamano"" >
-                                <tr>
-                                    <td  style=""font-size: 40px; padding:40px"" ><span>AUTOADHESIVO</span></td>
-                                </tr>
-                            </table>
-                           </div>
+                       <table>
+                        <table>
+                            <tr>
+                                <td width=""5%"" rowspan=""3"" align=""center""
+                                  style=""border-left: 1px solid #000000; border-right: 1px solid #000000; border-bottom: 1px solid #000000;"">
+                                  <table border=""0"" cellspacing=""0"" cellpadding=""0"">
+                                    <tbody>
+                                      <tr>
+                                        <td align=""center"" rowspan=""3""><img style=""height: 50px;""
+                                            src='data:image/png;base64,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' />
+                                        </td>
+                                      </tr>
+                                    </tbody>
+                                  </table>
+                                </td>
+                                <td colspan=""4"" align=""left"" style=""padding: 5px 10px;border: 1px solid #000000;"">
+                                  <strong>FIRMA DECLARANTE
+                                    <br>
+                                    <br>
+                                    <br>
+                                    <br>
+                                    <br>
+                                    <br>
+                                    <br>
+                                    <br>
+                                    <br>
+                                    <br>
+                                    <!-- <center><img style=""width:22%; height:39%;""  -->
               
+                                    ______________________________________________________________</strong>
+                                </td>
+                                <td colspan=""5"" align=""left"" style=""padding: 5px 10px;border: 1px solid #000000;"">
+                                  <table width=""100%"" border=""0"" align=""left"" cellpadding=""0"" cellspacing=""0"">
+                                    <tbody>
+                                      <tr>
+                                        <td align=""left""><strong>FIRMA DEL CONTADOR
+                                            <label><br><br><br><br><strong>________{formulario.DatosReemplazar.contador}________</strong></label>
+                                          </strong></td>
+                              
+                                        <td align=""center""><strong>REVISOR FISCAL
+                                            <label><br><br><br><br><strong>_________{formulario.DatosReemplazar.revisor}_______</strong></label>
+                                          </strong></td>
+                                      </tr>
+                                    </tbody>
+                                  </table>
+                                  <strong>
+                                    <br>
+                                    <br>
+                                    <br>
+                                    <br>
+                                    <br>
+                                    <br>
+                                    <br>
+                                    <br>
+                                    <br>
+                                    <br>
+                                    <!-- <center><img style=""width:22%; height:36%; visibility:{{FirmaContadorxRevisor}}""  -->
+              
+                                    ______________________________________________________________</strong>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td colspan=""4"" align=""left"" style=""padding: 5px 10px;border: 1px solid #000000;""><strong>NOMBRE:
+                                    {formulario.DetalleDeclaracion.nombreDeclarante}</strong></td>
+                                <td colspan=""5"" align=""left"" style=""padding: 5px 10px;border: 1px solid #000000;""><strong>NOMBRE:
+                                    {formulario.DetalleDeclaracion.nombreContador}</strong></td>
+                              </tr>
+                              <tr>
+                                <td colspan=""4"" align=""left"" style=""padding: 5px 10px;border: 1px solid #000000;"">
+                                  <table width=""100%"" border=""0"" cellspacing=""0"" cellpadding=""0"">
+                                    <tbody>
+                                      <tr>
+                                        <td align=""center""><strong>CC</strong>
+                                        <td align=""left""><strong>No.</strong> <strong>{formulario.DetalleDeclaracion.documentoDeclarante}</strong></td>
+                                      </tr>
+                                    </tbody>
+                                  </table>
+                                </td>
+                                <td colspan=""5"" align=""left"" style=""padding: 5px 10px;border: 1px solid #000000;"">
+                                  <table width=""100%"" border=""0"" cellspacing=""0"" cellpadding=""0"">
+                                    <tbody>
+                                      <tr>
+                                        <td align=""center""><strong>CC</strong>
+                                        <td align=""left""><strong>No.</strong> <strong>{formulario.DetalleDeclaracion.documentoContadorRevisor}</strong></td>
+                                        <td align=""left""><strong>T.P.</strong> <strong>{formulario.DetalleDeclaracion.tarjetaProfesional}</strong></td>
+                                      </tr>
+                                    </tbody>
+                                  </table>
+                                </td>
+                              </tr>
+              
+                              <tr style=""padding: 5px 10px;border: 1px solid #000000;"">
+                                <td colspan=""5"" align=""center"" style=""padding: 5px 10px;border: 1px solid #000000;"">
+                                  <img src="""" width=""100%"" alt="""">
+                                </td>
+                                <td colspan=""5"" align=""center"" style=""padding: 5px 10px;border: 1px solid #000000;"">
+                                </td>
+                                <!-- <td colspan=""5"" align=""center"" style=""padding: 5px 10px;border: 1px solid #000000;""> -->
+                                <!-- ESPACIO PARA SELLO O TIMBRE -->
+                                <!-- </td> -->
+                              </tr>
+              
+                              <tr>
+                                <td colspan=""3"" align=""center"" style=""padding: 5px 10px;border: 1px solid #000000;"">
+                                  ESPACIO PARA CÓDIGO QR</td>
+                                <td colspan=""2"" align=""center"" style=""padding: 5px 10px;border: 1px solid #000000;"">
+                                  <br /><br /><br /><br /><br />FORMULARIO No.{formulario.DetalleDeclaracion.ano} - {formulario.DetalleDeclaracion.radicadoCorreccion}
+              
+                                </td>
+                                <td colspan=""5"" align=""center"" style=""padding: 5px 10px;border: 1px solid #000000;"">
+                                  <p>ESPACIO PARA SELLO O TIMBRE</p>
+                                  <br><br><br><br>
+                                  <p></p>
+                                </td>
+                              </tr>
+                              <tr>
+              
+                                <td colspan=""5"" align=""center"" style=""padding: 5px 10px;border: 1px solid #000000;"">
+                                  Carrera 55 N 46 A 16 Barrio Colonia Sur- Codigo Postal 053410
+                                  <br>
+                                  Telefono: 01800400108-(094) 8325109 / Extencion 105 - 121
+                                </td>
+                                <td colspan=""5"" align=""center"" style=""padding: 5px 10px;border: 1px solid #000000;"">
+                                  Pagina Web: www.yondo-antioquia.gov.vo <br>
+                                  Email: secretariadehacienda@yondo-antioquia.gov.co <br> recaudo@yondo-antioquia.gov.co /
+                                  fiscalizacion@yondo.gov.co
+                                </td>
+                              </tr>
+                               </tbody>
+                                </table>
+                                </tr>
+                            </table>
                         </div>
-
-                    </div>
-                </div>
-
-   
-   
-    
             </body>
 
             </html>";

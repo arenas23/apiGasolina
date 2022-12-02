@@ -2,6 +2,7 @@
 {
     public class DataReplaceX
     {
+
         public string mayorista {get;set;}
         public string importador {get;set;}
         public string productor {get;set;}
@@ -27,6 +28,6 @@
         public string revisor { get;set;}
         public string municipio { get;set;}
         public string departamento { get;set;}
-        
+
     }
 }

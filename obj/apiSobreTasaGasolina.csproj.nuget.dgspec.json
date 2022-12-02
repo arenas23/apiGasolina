@@ -1,24 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\carlos.velez\\source\\repos\\apiSobreTasaGasolina\\apiSobreTasaGasolina.csproj": {}
+    "C:\\Users\\MARISTIZABAL\\Documents\\apiGasolina\\apiSobreTasaGasolina.csproj": {}
   },
   "projects": {
-    "C:\\Users\\carlos.velez\\source\\repos\\apiSobreTasaGasolina\\apiSobreTasaGasolina.csproj": {
+    "C:\\Users\\MARISTIZABAL\\Documents\\apiGasolina\\apiSobreTasaGasolina.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\carlos.velez\\source\\repos\\apiSobreTasaGasolina\\apiSobreTasaGasolina.csproj",
+        "projectUniqueName": "C:\\Users\\MARISTIZABAL\\Documents\\apiGasolina\\apiSobreTasaGasolina.csproj",
         "projectName": "apiSobreTasaGasolina",
-        "projectPath": "C:\\Users\\carlos.velez\\source\\repos\\apiSobreTasaGasolina\\apiSobreTasaGasolina.csproj",
-        "packagesPath": "C:\\Users\\carlos.velez\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\carlos.velez\\source\\repos\\apiSobreTasaGasolina\\obj\\",
+        "projectPath": "C:\\Users\\MARISTIZABAL\\Documents\\apiGasolina\\apiSobreTasaGasolina.csproj",
+        "packagesPath": "C:\\Users\\MARISTIZABAL\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\MARISTIZABAL\\Documents\\apiGasolina\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
           "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
         ],
         "configFilePaths": [
-          "C:\\Users\\carlos.velez\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\MARISTIZABAL\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
@@ -77,7 +77,8 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -89,7 +90,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.202\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     }
