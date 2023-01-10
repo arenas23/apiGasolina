@@ -95,3 +95,4 @@ C:\Users\MARISTIZABAL\Documents\apiGasolina\obj\Release\net6.0\refint\apiSobreTa
 C:\Users\MARISTIZABAL\Documents\apiGasolina\obj\Release\net6.0\apiSobreTasaGasolina.pdb
 C:\Users\MARISTIZABAL\Documents\apiGasolina\obj\Release\net6.0\apiSobreTasaGasolina.genruntimeconfig.cache
 C:\Users\MARISTIZABAL\Documents\apiGasolina\obj\Release\net6.0\ref\apiSobreTasaGasolina.dll
+C:\Users\MARISTIZABAL\Documents\apiGasolina\bin\Release\net6.0\BarcodeLib.Barcode.ASP.NET.dll

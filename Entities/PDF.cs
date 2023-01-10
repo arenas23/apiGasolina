@@ -1,10 +1,15 @@
 ﻿using apiSobreTasaGasolina.Model;
 using SelectPdf;
+using System.Drawing.Drawing2D;
+using System.Drawing;
+using BarcodeLib.Barcode;
 
 namespace apiSobreTasaGasolina.Entities
 {
     public class PDF
     {
+
+        public string Code = "{Code}";
         public string style = 
         " <style>" +
             ".bordes{" +
@@ -93,12 +98,12 @@ namespace apiSobreTasaGasolina.Entities
                                     <span id=""MensajeAcuerdoMunicipal""></span>
                                   </td>
                                   <tr>
-                                    <td width=""16%"" align=""left"" style=""padding: 5px 10px;border: 1px solid #000000; font-size: 22px"">
+                                    <td align=""left"" style=""padding: 5px 10px;border: 1px solid #000000; font-size: 22px"">
                                       <strong>MUNICIPIO
-                                    <td colspan=""3"" align=""left"" style=""padding: 5px 10px;border: 1px solid #000000;  font-size: 22px"">YONDO
+                                    <td colspan=""3"" align=""left"" style=""width: 1044px; padding: 5px 10px;border: 1px solid #000000;  font-size: 22px"">YONDO
                                     </td>
-                                    <td width=""25%"" rowspan=""2"" align=""left"" style=""border: 1px solid #000000;"">
-                                      <table width=""100%"" border=""0"" cellspacing=""0"" cellpadding=""0"" style=""padding: 5px 10px;"">
+                                    <td  rowspan=""3"" align=""left"" style=""border: 1px solid #000000; width: 340px;"">
+                                      <table width=""100%"" border=""0"" cellspacing=""0"" cellpadding=""0"" style=""padding: 5px 10px; "">
                                         <tbody>
                                           <tr>
                                             <td align=""center"" style=""font-size: 22px""><strong>Fecha máxima presentación</strong></td>
@@ -114,17 +119,17 @@ namespace apiSobreTasaGasolina.Entities
                                     </td>
                                   </tr>
                                   <tr>
-                                    <td width=""16%"" align=""left"" style=""padding: 5px 10px;border: 1px solid #000000; font-size: 22px"">
+                                    <td  align=""left"" style=""padding: 5px 10px;border: 1px solid #000000; font-size: 22px"">
                                       <strong>DEPARTAMENTO:</strong>
                                     </td>
                                     <td colspan=""3"" align=""left"" style=""padding: 5px 10px;border: 1px solid #000000; font-size: 20px"">
                                       ANTIOQUIA</td>
                                   </tr>
-                                  <tr>
+                                  <tr style=""border: 1px solid #000000;"">
                                     <td align=""left"" style=""padding: 5px 10px;border: 1px solid #000000; font-size: 22px"">
                                       <strong>AÑO GRAVABLE:</strong>
                                     </td>
-                                    <td width=""100%"" align=""left"" style=""padding: 5px 10px; border-right: 0px solid #000000;font-size: 20px"">
+                                    <td  align=""left"" style=""padding: 5px 10px; border-right: 0px solid #000000;font-size: 20px"">
                                       {formulario.DetalleDeclaracion.ano}</td>
                                     <td colspan=""2"" align=""left"" style=""padding: 5px 10px;border: 0px solid #000000;"">
                                       <table width=""100%"" border=""0"" cellspacing=""0"" cellpadding=""0"">
@@ -133,13 +138,7 @@ namespace apiSobreTasaGasolina.Entities
                                         </tbody>
                                       </table>
                                     </td>
-                                    <td colspan=""2"" align=""left"" style=""padding: 5px 10px;border-right: 1px solid #000000;"">
-                                      <table width=""100%"" border=""0"" cellspacing=""0"" cellpadding=""0"">
-                                        <tbody>
 
-                                        </tbody>
-                                      </table>
-                                    </td>
                                   </tr>
                                 </body>
                             </table>
@@ -226,7 +225,7 @@ namespace apiSobreTasaGasolina.Entities
                                                 <td style=""width: 60px;text-align: center;"" colspan=""""><span></span></td>
                                                 <td style=""width: 60px;text-align: center;"" colspan=""""><span>FECHA</span></td>
                                                 <td style=""width: 60px;text-align: center;"" colspan=""""><span></span></td>
-                                                <td style=""width: 30px;""></td>
+                                                <td style=""width: 30px; border-right: 1px solid #000000;""></td>
                                             </tr>
                     
                                             <tr>
@@ -234,7 +233,7 @@ namespace apiSobreTasaGasolina.Entities
                                                 <td  class=""bordes""><span>{formulario.DetalleDeclaracion.radicadoCorreccion}</span></td>
                                                 <td colspan=""3"" class=""bordes""><span>&nbsp;{formulario.DetalleDeclaracion.fechaCorreccion}</span></td>
                                    
-                                                <td><span></span></td>
+                                                <td style=""border-right: 1px solid #000000;""><span></span></td>
                                             </tr>
                                             <tr>
                                                 <td colspan=""11"">&nbsp;</td>
@@ -254,7 +253,7 @@ namespace apiSobreTasaGasolina.Entities
                             </tr>
                             <tr>
                                 <td>
-                                    <table class=""bordes tamano"">
+                                    <table class=""bordes tamano"" style=""border: 1px solid black;"">
                                         <tr>
                                             <td colspan=""34""><span></span></td>
                                         </tr>
@@ -376,9 +375,9 @@ namespace apiSobreTasaGasolina.Entities
                                                 <table class=""tamano bordes"">
                                                     <tr>
                                                         <td class=""bordes"" style=""width: 30px;""><span>NIT</span></td>
-                                                        <td class=""bordes""><span>{formulario.DatosReemplazar.nit}</span></td>
+                                                        <td class=""bordes"" style=""width: 277px;""><span>{formulario.DatosReemplazar.nit}</span></td>
                                                         <td class=""bordes""><span>D.V</span></td>
-                                                        <td class=""bordes""><span>{formulario.DatosReemplazar.dv}</span></td>
+                                                        <td class=""bordes"" style=""width: 277px;""><span>{formulario.DatosReemplazar.dv}</span></td>
                                                     </tr>
                                                     <tr>
                                                         <td class=""bordes""><span>C.C.</span></td>
@@ -546,7 +545,7 @@ namespace apiSobreTasaGasolina.Entities
                     <div class=""lados"" style=""margin-top: 40px;"">
 
                        <table>
-                        <table>
+                        <table class=""bordes"">
                             <tr>
                                 <td width=""5%"" rowspan=""3"" align=""center""
                                   style=""border-left: 1px solid #000000; border-right: 1px solid #000000; border-bottom: 1px solid #000000;"">
@@ -567,11 +566,6 @@ namespace apiSobreTasaGasolina.Entities
                                     <br>
                                     <br>
                                     <br>
-                                    <br>
-                                    <br>
-                                    <br>
-                                    <br>
-                                    <br>
                                     <!-- <center><img style=""width:22%; height:39%;""  -->
               
                                     ______________________________________________________________</strong>
@@ -581,21 +575,16 @@ namespace apiSobreTasaGasolina.Entities
                                     <tbody>
                                       <tr>
                                         <td align=""left""><strong>FIRMA DEL CONTADOR
-                                            <label><br><br><br><br><strong>________{formulario.DatosReemplazar.contador}________</strong></label>
+                                            <label><br><strong>________{formulario.DatosReemplazar.contador}________</strong></label>
                                           </strong></td>
                               
                                         <td align=""center""><strong>REVISOR FISCAL
-                                            <label><br><br><br><br><strong>_________{formulario.DatosReemplazar.revisor}_______</strong></label>
+                                            <label><br><strong>_________{formulario.DatosReemplazar.revisor}_______</strong></label>
                                           </strong></td>
                                       </tr>
                                     </tbody>
                                   </table>
                                   <strong>
-                                    <br>
-                                    <br>
-                                    <br>
-                                    <br>
-                                    <br>
                                     <br>
                                     <br>
                                     <br>
@@ -638,7 +627,7 @@ namespace apiSobreTasaGasolina.Entities
               
                               <tr style=""padding: 5px 10px;border: 1px solid #000000;"">
                                 <td colspan=""5"" align=""center"" style=""padding: 5px 10px;border: 1px solid #000000;"">
-                                  <img src="""" width=""100%"" alt="""">
+                                  <img src=""{Code}"" width=""100%"" alt="""">
                                 </td>
                                 <td colspan=""5"" align=""center"" style=""padding: 5px 10px;border: 1px solid #000000;"">
                                 </td>
@@ -648,15 +637,15 @@ namespace apiSobreTasaGasolina.Entities
                               </tr>
               
                               <tr>
-                                <td colspan=""3"" align=""center"" style=""padding: 5px 10px;border: 1px solid #000000;"">
+                                <td width=""35%"" colspan=""3"" align=""center"" style=""padding: 5px 10px;border: 1px solid #000000;"">
                                   ESPACIO PARA CÓDIGO QR</td>
                                 <td colspan=""2"" align=""center"" style=""padding: 5px 10px;border: 1px solid #000000;"">
-                                  <br /><br /><br /><br /><br />FORMULARIO No.{formulario.DetalleDeclaracion.ano} - {formulario.DetalleDeclaracion.radicadoCorreccion}
+                                  <br /><br /><br />FORMULARIO No.{formulario.DetalleDeclaracion.ano} - {formulario.DetalleDeclaracion.radicadoCorreccion}
               
                                 </td>
                                 <td colspan=""5"" align=""center"" style=""padding: 5px 10px;border: 1px solid #000000;"">
                                   <p>ESPACIO PARA SELLO O TIMBRE</p>
-                                  <br><br><br><br>
+                                  <br><br>
                                   <p></p>
                                 </td>
                               </tr>
@@ -681,7 +670,49 @@ namespace apiSobreTasaGasolina.Entities
             </body>
 
             </html>";
+
+       
             return body;
+        }
+
+        public string CodigoBarras(string valorFactura, string fecha, string factura, string codigoBarras)
+        {
+          
+            string CodeBar = "";
+            int j, lengthE;
+            int ma = 0, me = 999999999;
+            if (!String.IsNullOrEmpty(codigoBarras))
+            {
+
+                for (j = 0; j < 50; j++)
+                {
+                    Linear barcode = new Linear();
+                    barcode.Type = BarcodeType.EAN128;
+                    barcode.Data = "(415)" + codigoBarras + "(8020)" + factura.Replace(".", "").PadLeft(8, '0') + "(3900)" + valorFactura.Replace(",", "").Replace(".", "").PadLeft(10, '0') + "(96)" + fecha;
+                    barcode.UOM = UnitOfMeasure.PIXEL;
+                    barcode.BarWidth = 2;
+                    barcode.TopMargin = 10;
+                    barcode.TextFont = new Font("Arial", 16, FontStyle.Bold);
+                    byte[] base64SingleBytes = barcode.drawBarcodeAsBytes();
+                    lengthE = base64SingleBytes.GetLength(0);
+
+                    if (lengthE > ma) { ma = lengthE; }
+                    if (lengthE < me) { me = lengthE; }
+
+                    if (ma != lengthE)
+                    {
+                        if (me < ma)
+                        {
+                            byte[] IMG = base64SingleBytes;
+                            CodeBar = string.Format("data:image/png;base64," + Convert.ToBase64String(IMG));
+                            break;
+                        }
+                    }
+                }
+            }
+            //CodeBar.Replace("a", "a\n");
+
+            return CodeBar;
         }
 
         public byte[] crearPDF(string body)
@@ -697,8 +728,5 @@ namespace apiSobreTasaGasolina.Entities
             byte[] pdfBytes = doc.Save();
             return pdfBytes;
         }
-
-
-
     }
 }

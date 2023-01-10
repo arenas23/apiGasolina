@@ -180,18 +180,29 @@ namespace apiSobreTasaGasolina.Controllers
                 formulario.DatosReemplazar = consulta.DatosReemplazar;
                 PDF pdf = new PDF();
                 string body = pdf.llenarPDF(formulario);
-                byte[] pdfBytes=pdf.crearPDF(body);
-
-                Declaracion declaracion = new();
+                
+                string total = "", fecha = "", factura = "", EAN = "7709999999999", doc = "", FechaDeclarado = "";
+                Declaracion declaracion = new Declaracion();
                 declaracion.idDeclaracion = consulta.IdDeclaracion;
                 declaracion.contribuyente = consulta.Contribuyente;
                 declaracion.fecha = consulta.fecha;
-                declaracion.PDF = pdfBytes;
+                
+                //declaracion.CodeBar = codeBar;
                 declaracion.valorPagar = formulario.DetalleDeclaracion.totalPagarCargo;
                 declaracion.tipo = consulta.Tipo;
                 declaracion.idMunicipio = consulta.municipio;
 
 
+                total = declaracion.valorPagar.ToString();
+                fecha = declaracion.fecha.ToString();
+                factura = declaracion.idDeclaracion.ToString();
+                doc = declaracion.contribuyente.ToString();
+
+                body = body.Replace("{Code}",pdf.CodigoBarras(total, Convert.ToDateTime(fecha).ToString("yyyyMMdd"), factura + doc, EAN));
+                byte[] pdfBytes = pdf.crearPDF(body);
+                declaracion.PDF = pdfBytes;
+                Console.WriteLine(body);
+  
                 db.Query("Declarar", declaracion, commandType: CommandType.StoredProcedure).FirstOrDefault();
 
                 return Ok(pdfBytes);

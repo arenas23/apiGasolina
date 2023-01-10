@@ -15,4 +15,10 @@
     <PackageReference Include="System.Drawing.Common" Version="6.0.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Reference Include="BarcodeLib.Barcode.ASP.NET">
+      <HintPath>Packages Manuales\BarcodeLib.Barcode.ASP.NET.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
 </Project>

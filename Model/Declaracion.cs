@@ -9,5 +9,7 @@
         public long valorPagar { get; set; }
         public int tipo { get; set; }
         public int idMunicipio { get; set; }
+
+       
     }
 }

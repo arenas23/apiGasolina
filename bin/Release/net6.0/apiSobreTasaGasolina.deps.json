@@ -13,7 +13,8 @@
           "Select.HtmlToPdf.NetCore": "22.1.0",
           "Swashbuckle.AspNetCore": "6.2.3",
           "System.Data.SqlClient": "4.8.3",
-          "System.Drawing.Common": "6.0.0"
+          "System.Drawing.Common": "6.0.0",
+          "BarcodeLib.Barcode.ASP.NET": "5.0.0.30712"
         },
         "runtime": {
           "apiSobreTasaGasolina.dll": {}
@@ -917,6 +918,14 @@
           "System.Threading": "4.3.0",
           "System.Xml.ReaderWriter": "4.3.0"
         }
+      },
+      "BarcodeLib.Barcode.ASP.NET/5.0.0.30712": {
+        "runtime": {
+          "BarcodeLib.Barcode.ASP.NET.dll": {
+            "assemblyVersion": "5.0.0.30712",
+            "fileVersion": "5.0.0.30712"
+          }
+        }
       }
     }
   },
@@ -1618,6 +1627,11 @@
       "sha512": "sha512-5zJ0XDxAIg8iy+t4aMnQAu0MqVbqyvfoUVl1yDV61xdo3Vth45oA2FoY4pPkxYAH5f8ixpmTqXeEIya95x0aCQ==",
       "path": "system.xml.xdocument/4.3.0",
       "hashPath": "system.xml.xdocument.4.3.0.nupkg.sha512"
+    },
+    "BarcodeLib.Barcode.ASP.NET/5.0.0.30712": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
     }
   }
 }
