@@ -16,7 +16,7 @@ builder.Services.AddCors(options =>
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-ConectionString.connection = builder.Configuration.GetConnectionString("Desarrollo");
+ConectionString.connection = builder.Configuration.GetConnectionString("Produccion");
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

@@ -11,7 +11,12 @@ namespace apiSobreTasaGasolina.Entities
 
         public string Code = "{Code}";
         public string style = 
-        " <style>" +
+        " <style>"+
+
+            "@page{" +
+            "size: A4;" +
+            "}" +
+
             ".bordes{" +
                 "z-index: 10;" +
                 "border: 1px solid black;" +
@@ -26,7 +31,7 @@ namespace apiSobreTasaGasolina.Entities
               @"font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
               font-size: 26px;
               margin: auto;
-              width: 1700px;" +
+              width: 2000px;" +
             "}" +
 
             ".lados" +
