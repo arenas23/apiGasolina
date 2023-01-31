@@ -212,6 +212,12 @@ namespace apiSobreTasaGasolina.Controllers
                 return Problem(ex.Message);
             }
         }
+
+        [HttpPost("")]
+        public ActionResult Pagar()
+        {
+
+        }
         
     }
 }
